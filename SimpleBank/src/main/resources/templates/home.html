@@ -1,0 +1,19 @@
+<div th:if="${IS_ADMIN}">
+    <a href="account/manage">Zarzadzanie kontami</a>
+</div>
+<div> Jesteś zalogowany jako: </div>
+<div th:text="${userName}"> </div>
+<div> Twój stan konta to: </div>
+<div th:text="${userAmount}"> </div>
+<div th:if="!${IS_ADMIN}"></div>
+    Wykonywanie przelewów
+    <form th:action="@{payments/transfer}" method="get">
+        <div>kwota przelewu:</div>
+        <input type="number" name="amount" th:value="${amount}" />
+        <div>Odbiorca przelewu</div>
+        <input type="text" name="recipient" th:value="${recipient}" class="form-control" placeholder="Wykonaj przelew" />
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</div>
+
+<a href="logout">logout</a>

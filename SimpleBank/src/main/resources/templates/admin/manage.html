@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+        <h1>Manage users</h1>
+        <div></div>
+        <div>Ilość wszystkich kont:</div>
+        <div th:text="${ACCOUNT_COUNT}"></div>
+        <div></div>
+        <div>Średnia ilość gotówki na koncie:</div>
+        <div th:text="${AVERAGE_COUNT_STATE}"></div>
+        <br><br>
+        <div>Bonus dla wszystkich użytkowników +27 złotych dla każdego</div>
+        <a href="/account/bonus">akcja bonus</a>
+        <a href="logout">logout</a>
+</body>
+</html>

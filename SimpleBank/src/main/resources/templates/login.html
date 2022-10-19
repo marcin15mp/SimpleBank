@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Bank center</title>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #3e8e41}
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        .formularz{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="formularz">
+<h1 style="color:mediumaquamarine">Please Log In</h1>
+<div th:if="${param.error}">
+    Invalid username and password.
+</div>
+<div th:if="${param.logout}">
+    You have been logged out.
+</div>
+<form method="post" th:action="@{/process-login}">
+    <div>
+        <input name="username" placeholder="Username" type="text"/>
+    </div>
+    <div>
+        <input name="password" placeholder="Password" type="password"/>
+    </div>
+    <hr>
+
+    <input class="button" type="submit" value="Log in"/>
+</form>
+</div>
+</body>
+</html>
